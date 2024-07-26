@@ -5,7 +5,7 @@ const config: CapacitorConfig = {
   appName: 'capacitor-app',
   webDir: 'dist',
   server: {
-    url: 'http://192.168.3.73:5173',
+    url: 'http://192.168.43.2:5179',
     cleartext: true
   },
   plugins: {
