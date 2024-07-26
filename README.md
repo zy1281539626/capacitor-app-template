@@ -1,13 +1,13 @@
 # capacitor-app-template
 
-This template should help get you started developing with Vue 3 in Vite.
+This template should help get you started developing with Vue 3 in Cross-Platform App development.
 
-## 依赖库
+## 1.Dependencies
 - vite: ^5.3.1
 - vue: ^3.4.29
 - typescript: ~5.4.0
 - @capacitor/core: 5.7.7 
-- @capacitor/cli: 5.7.7  (devDependencies)
+- @capacitor/cli: 5.7.7 
 - @capacitor/android: 5.7.7
 - @capacitor/ios: 5.7.7
 - @capacitor-community/safe-area: 6.0.0-alpha.4
@@ -24,7 +24,7 @@ https://capacitorjs.com/docs/v5/ios
 
 
 
-## Project Setup
+## 2.Project Setup
 
 ```sh
 pnpm install
@@ -77,18 +77,52 @@ npx cap run android
 npx cap run ios
 ```
 
-## 组件使用
+## 3. Components Usage
+
+### 3.1 Layout
+```html
+<layout>
+    <template #header>Header Slot</template>
+
+    <div>Home</div>
+
+    <template #footer>Footer Slot</template>
+</layout>
+```
+
+### 3.2 Icon
+
+```html
+<icon name="close"></icon>
+```
+常用属性：
+- name: 图标名称
+- size: 图标大小
+
+### 3.3 Request
+
+```typescript
+import http from '@/utils/request'
+
+const url = 'https://example.com'
+const data = {
+  iGid: 0,
+  iPageNo: 4,
+  iPageSize: 3
+}
+const res = await http.get(url, data)
+```
 
 
-## 注意
+## 4. Important
 
-### 1. viewport-fit=cover
+### 4.1 viewport-fit=cover
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 ```
 
-### 2. safe-area插件
+### 4.2 safe-area插件
 
 ```typescript
 // 如果在capacitor配置文件中配置也需要import
