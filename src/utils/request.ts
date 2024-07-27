@@ -1,3 +1,6 @@
+/**
+ * http请求插件，基于@capacitor/core - CapacitorHttp
+ */
 import { CapacitorHttp, type HttpOptions, type HttpParams } from '@capacitor/core'
 
 const RequestMethods = {

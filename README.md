@@ -11,12 +11,14 @@ This template should help get you started developing with Vue 3 in Cross-Platfor
 - @capacitor/android: 5.7.7
 - @capacitor/ios: 5.7.7
 - @capacitor-community/safe-area: 6.0.0-alpha.4
+- @capacitor/preferences": "^5.0.8"
 - @ionic/vue: 8.2.6  (layout safe-area)
 - @ionic/vue-router: 8.2.6 (多页面路由)
 - vue-router 4.4.0
 - unplugin-auto-import: 0.18.2 (自动导入)
 - unplugin-vue-components: 0.27.3 (组件按需加载)
 - vite-plugin-svg-icons: 2.0.1 (svg图标)
+- crypto-js 4.2.0
 
 - capacitor v5: iOS 13+ is supported. Xcode 14.1+ is required (可根据xcode版本选择capacitor版本)
 https://capacitorjs.com/docs/v5/ios
@@ -100,6 +102,7 @@ npx cap run ios
 - size: 图标大小
 
 ### 3.3 Request
+基于capacitor/core的CapacitorHttp封装到@/utils/request.ts
 
 ```typescript
 import http from '@/utils/request'
@@ -111,18 +114,64 @@ const data = {
   iPageSize: 3
 }
 const res = await http.get(url, data)
+
+// ... http.post(url, data, options)
+// ... http.request(method, url, data, options)
 ```
 
+### 3.4 Data Cache (Persist)
+基于@capacitor/preferences封装数据缓存插件到@/utils/cache.ts
 
-## 4. Important
+```typescript
+// stores/user.ts 初始化用户模块缓存
+import { DataCache } from '@/utils/cache'
 
-### 4.1 viewport-fit=cover
+// 参数：模块[string] 数据是否加密[boolean]，默认false
+const userCache = new DataCache('user', true)
+export default userCache
+```
+业务使用：
+```typescript
+// vue script
+import userCache from '@/stores/user'
+
+// get data
+await userCache.getData('info')
+
+// set data
+await userCache.setData('info', { username: 'mike', age: 24 })
+
+// remove data
+await userCache.removeData('info')
+```
+
+## 4. Native API
+
+```typescript
+// Camera
+
+// Scan
+
+// Location
+
+// Share
+
+// Notification
+
+
+```
+
+## 5. Important
+
+### 5.1 html页面
+- viewport-fit 带有凹槽的屏幕
+- user-scalable 禁止双击缩放
 
 ```html
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover,maximum-scale=1.0, user-scalable=0" />
 ```
 
-### 4.2 safe-area插件
+### 5.2 safe-area插件
 
 ```typescript
 // 如果在capacitor配置文件中配置也需要import

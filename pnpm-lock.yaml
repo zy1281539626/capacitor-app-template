@@ -17,12 +17,18 @@ dependencies:
   '@capacitor/ios':
     specifier: ^5
     version: 5.7.7(@capacitor/core@5.7.7)
+  '@capacitor/preferences':
+    specifier: ^5.0.8
+    version: 5.0.8(@capacitor/core@5.7.7)
   '@ionic/vue':
     specifier: ^8.2.6
     version: 8.2.6
   '@ionic/vue-router':
     specifier: ^8.2.6
     version: 8.2.6
+  crypto-js:
+    specifier: ^4.2.0
+    version: 4.2.0
   vue:
     specifier: ^3.4.29
     version: 3.4.34(typescript@5.4.5)
@@ -40,6 +46,9 @@ devDependencies:
   '@tsconfig/node20':
     specifier: ^20.1.4
     version: 20.1.4
+  '@types/crypto-js':
+    specifier: ^4.2.2
+    version: 4.2.2
   '@types/node':
     specifier: ^20.14.5
     version: 20.14.12
@@ -167,6 +176,14 @@ packages:
     resolution: {integrity: sha512-bgvSJGia5C5Klfd7t/qlqlRAWzGGAwlIlzkOJYsxpJiYuz6OXVgeesuXRxMNOaUZQ9fmL7OWukmhcv03t9Up+w==}
     peerDependencies:
       '@capacitor/core': ^5.7.0
+    dependencies:
+      '@capacitor/core': 5.7.7
+    dev: false
+
+  /@capacitor/preferences@5.0.8(@capacitor/core@5.7.7):
+    resolution: {integrity: sha512-zzz8JC2NuZ+xdBP2Cfhu4uyRUMAFoxMl7l8w5ahQPzckyt7Fk/pWATXj6IcTm7DzbsKc8ryXSsYTkv9ZL3Pfmw==}
+    peerDependencies:
+      '@capacitor/core': ^5.0.0
     dependencies:
       '@capacitor/core': 5.7.7
     dev: false
@@ -772,6 +789,10 @@ packages:
 
   /@tsconfig/node20@20.1.4:
     resolution: {integrity: sha512-sqgsT69YFeLWf5NtJ4Xq/xAF8p4ZQHlmGW74Nu2tD4+g5fAsposc4ZfaaPixVu4y01BEiDCWLRDCvDM5JOsRxg==}
+    dev: true
+
+  /@types/crypto-js@4.2.2:
+    resolution: {integrity: sha512-sDOLlVbHhXpAUAL0YHDUUwDZf3iN4Bwi4W6a0W0b+QcAezUbRtH4FVb+9J4h+XFPW7l/gQ9F8qC7P+Ec4k8QVQ==}
     dev: true
 
   /@types/estree@1.0.5:
@@ -1479,6 +1500,10 @@ packages:
       shebang-command: 2.0.0
       which: 2.0.2
     dev: true
+
+  /crypto-js@4.2.0:
+    resolution: {integrity: sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==}
+    dev: false
 
   /css-select@4.3.0:
     resolution: {integrity: sha512-wPpOYtnsVontu2mODhA19JrqWxNsfdatRKd64kmpRbQgh1KtItko5sTnEpPdpSaJszTOhEMlF/RPz28qj4HqhQ==}
