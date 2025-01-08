@@ -29,5 +29,8 @@ coverage
 
 *.tsbuildinfo
 
+auto-imports.d.ts
+components.d.ts
+.eslintrc-auto-import.js
 android
 ios

@@ -1,5 +1,10 @@
 # capacitor-app-template
 
+## TODO
+
+- [ ] Persist Data Storage
+- [ ] layout
+
 This template should help get you started developing with Vue 3 in Cross-Platform App development.
 
 ## 1.Dependencies
@@ -17,7 +22,6 @@ This template should help get you started developing with Vue 3 in Cross-Platfor
 - vue-router 4.4.0
 - unplugin-auto-import: 0.18.2 (自动导入)
 - unplugin-vue-components: 0.27.3 (组件按需加载)
-- vite-plugin-svg-icons: 2.0.1 (svg图标)
 - crypto-js 4.2.0
 
 - capacitor v5: iOS 13+ is supported. Xcode 14.1+ is required (可根据xcode版本选择capacitor版本)

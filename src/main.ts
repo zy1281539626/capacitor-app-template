@@ -1,4 +1,3 @@
-import 'virtual:svg-icons-register'
 import { createApp } from 'vue'
 import App from './App.vue'
 import { IonicVue, iosTransitionAnimation } from '@ionic/vue'

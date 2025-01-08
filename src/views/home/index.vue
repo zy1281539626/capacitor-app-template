@@ -10,7 +10,7 @@ const getApi = async () => {}
     <template #header>111</template>
 
     <div>Home</div>
-    <icon name="close"></icon>
+    <svg-icon name="close"></svg-icon>
 
     <ion-button @click="getApi">GetAPI</ion-button>
 
